@@ -1,0 +1,29 @@
+public class Lab1 {
+    public static void main (String[] args) {
+        long[] d = new long[13];
+        int k=0;
+        for (int i = 15; i > 2; i--) {
+            d[k] = i;
+            k++;
+        }
+        float x[] = new float[12];
+	int w=2 , v=-14;
+        for (int i = 0; i < 12; i++) {
+            x[i] = (float) (Math.random() * (w-v) + v );
+        }
+        double[][] c = new double[13][12];       
+        for (int i = 0; i < 13; i++) {
+            for (int j = 0; j < 12; j++) {
+                if (d[i] == 11) {
+                    c[i][j] = Math.asin(Math.pow(Math.E, Math.cbrt(-Math.pow(Math.PI / 2.0 / Math.abs(x[j]), x[j]))));
+                } else if (d[i] == 4 || d[i] == 6 || d[i] == 7 || d[i] == 10 || d[i] == 13 || d[i] == 14) {
+                    c[i][j] = Math.pow(2.0 / 3.0 * Math.pow(Math.pow(4.0 * (1.0 - x[j]), 3.0) + 1.0, 3.0), 2.0);
+                } else {
+                    c[i][j] = Math.pow(2.0 * Math.pow(1.0 / 3.0 + Math.atan((1.0 / 3.0 * (x[j] - 6.0) / 16.0) / 0.25), 2.0), Math.pow(Math.asin(Math.pow(Math.E, -Math.abs(x[j])) + 4.0), 2.0));
+                }
+                System.out.printf("%.2f   ", c[i][j]);
+            }
+            System.out.println("\n");
+        } 
+    }
+}
